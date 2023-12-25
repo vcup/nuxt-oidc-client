@@ -2,7 +2,7 @@ import { UserManager } from 'oidc-client-ts'
 import { useState, useRequestURL } from '#imports'
 import type { ModuleOptions } from './module.js'
 
-export const useOidcClient = () => useState('oidc-client', async () => {
+export const useOidcClient = () => useState('oidc-client', () => {
   const options = {} as ModuleOptions
   const { origin, hostname } = useRequestURL()
   if (!options.callback_path) {
