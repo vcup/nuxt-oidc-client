@@ -4,5 +4,10 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
+import { useOidcClient } from '#imports'
+onMounted(async () => {
+  const oidc = await useOidcClient()
+  console.info(oidc, oidc.userManager.settings, useOidcClient)
+})
 </script>
