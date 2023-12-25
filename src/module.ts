@@ -41,13 +41,11 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup(options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
-    const runtimeDir = resolve('./runtime')
 
-    const useOidcClientPath = resolve(runtimeDir, 'useOidcClient.ts')
     addTemplate({
       filename: 'useOidcClient.ts',
       getContents: async () => {
-        const file = await readFile(useOidcClientPath)
+        const file = await readFile(resolve('useOidcClient.ts'))
         const result = file.toString()
           .replace(/{options.state_key}/, options.state_key!)
           .replace(/(?<=\s+const options = ){}(?= as ModuleOptions)/, JSON.stringify(options))

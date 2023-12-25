@@ -1,6 +1,6 @@
 import { UserManager } from 'oidc-client-ts'
 import { useState, useRequestURL } from '#imports'
-import type { ModuleOptions } from '../module.ts'
+import type { ModuleOptions } from './module.js'
 
 export const useOidcClient = () => useState('oidc-client', async () => {
   const options = {} as ModuleOptions
