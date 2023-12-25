@@ -18,7 +18,7 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
+    "prepack": "nuxt-module-build build && shx cp src/useOidcClient.ts ./dist",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
@@ -41,6 +41,7 @@
     "changelogen": "^0.5.5",
     "eslint": "^8.55.0",
     "nuxt": "^3.8.2",
+    "shx": "^0.3.4",
     "vitest": "^1.1.0"
   }
 }
