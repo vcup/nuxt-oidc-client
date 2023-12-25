@@ -4,18 +4,16 @@ import type { ModuleOptions } from './module.js'
 
 export const useOidcClient = () => useState('oidc-client', async () => {
   const options = {} as ModuleOptions
-  let { origin, hostname } = useRequestURL()
-  let callback_path ='/oidc/callback'
-
-  if (options.origin) origin = options.origin
-  if (options.hostname) hostname = options.hostname
-  if (options.callback_path) callback_path = options.callback_path
+  const { origin, hostname } = useRequestURL()
+  if (!options.callback_path) {
+    options.callback_path = origin + '/oidc/callback'
+  }
 
   const settings = {
     ...options.settings,
-    authority: origin,
-    client_id: hostname,
-    redirect_uri: origin + callback_path
+    authority: options.origin ?? origin,
+    client_id: options.hostname ?? hostname,
+    redirect_uri: options.callback_path
   }
 
   const userManager = new UserManager(settings)

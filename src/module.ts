@@ -20,7 +20,8 @@ export interface ModuleOptions {
   hostname?: string
 
   /**
-   * @default /oidc/callback
+   * The origin will always get from useRequestURL().origin
+   * @default origin + '/oidc/callback'
    */
   callback_path?: string
 
