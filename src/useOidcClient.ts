@@ -11,8 +11,8 @@ export const useOidcClient = () => useState('oidc-client', async () => {
 
   const settings = {
     ...options.settings,
-    authority: options.origin ?? origin,
-    client_id: options.hostname ?? hostname,
+    authority: options.authority ?? origin,
+    client_id: options.client_id ?? hostname,
     redirect_uri: options.callback_path
   }
 

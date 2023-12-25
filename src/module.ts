@@ -10,14 +10,16 @@ export interface ModuleOptions {
   state_key?: string
 
   /**
-   * @default { origin } = useRequestURL()
+   * Sholu be an full-qualified uri
+   * @default useRequestURL().origin
    */
-  origin?: string
+  authority?: string
 
   /**
-   * @default { hostname } = useRequestURL()
+   * client_id will use, equivalent to settings.client_id
+   * @default useRequestURL().hostname
    */
-  hostname?: string
+  client_id?: string
 
   /**
    * The origin will always get from useRequestURL().origin
