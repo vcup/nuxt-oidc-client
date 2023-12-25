@@ -1,6 +1,6 @@
 {
   "name": "nuxt-oidc-client",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "oidc-client-ts support for nuxt",
   "repository": "vcup/nuxt-oidc-client",
   "license": "LGPLv2.1",

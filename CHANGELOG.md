@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/vcup/nuxt-oidc-client/compare/v0.0.4...v0.0.5)
+
+### 🚀 Enhancements
+
+- UseOidcClient do not return Promise<T> ([771c791](https://github.com/vcup/nuxt-oidc-client/commit/771c791))
+
+### ❤️ Contributors
+
+- Miryo <miryo@vcup.moe>
+
 ## v0.0.4
 
 [compare changes](https://github.com/vcup/nuxt-oidc-client/compare/v0.0.3...v0.0.4)
